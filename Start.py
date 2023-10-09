@@ -8,5 +8,7 @@ while True:
     #    text = input("Введите команду: ")
     text = recognize()
     r = vectors(text, vectorizer, clf)
+    if r == "off":
+        break
     print(r)
 #    Programs(r)
