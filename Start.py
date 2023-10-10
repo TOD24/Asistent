@@ -13,6 +13,6 @@ while True:
     if r == "off" and "отключись" in comand:
         break
     elif r == "off" and "компютер" in comand:
-        print(r)
-    print(r)
-    Programs(r)
+        sustem(r)
+    else:
+        Programs(r)
