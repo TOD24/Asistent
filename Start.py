@@ -1,4 +1,5 @@
-from Def import *
+from Def import Programs
+from initialization import initialization, vectors, initialize_recognizer, recognize
 from words import data_set
 
 
@@ -11,4 +12,4 @@ while True:
     if r == "off":
         break
     print(r)
-#    Programs(r)
+    Programs(r)
