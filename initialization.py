@@ -11,9 +11,9 @@ import queue
 q = queue.Queue()
 
 # Глобальные переменные
-model = None  # Модель Vosk будет инициализирована в функции initialize_recognizer
-device = sd.default.device
-samplerate = int(sd.query_devices(device[0], 'input')['default_samplerate'])
+#model = None  # Модель Vosk будет инициализирована в функции initialize_recognizer
+#device = sd.default.device
+#samplerate = int(sd.query_devices(device[0], 'input')['default_samplerate'])
 
 
 

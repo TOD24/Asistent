@@ -1,5 +1,5 @@
 from Def import Programs
-from initialization import initialization, vectors, initialize_recognizer, recognize
+from initialization import initialization, vectors
 from words import data_set
 
 
@@ -8,8 +8,9 @@ vectorizer, clf = initialization(data_set)
 while True:
     text = input("Введите команду: ")
     # text = recognize()
+    comand = text.split()
     r = vectors(text, vectorizer, clf)
-    if r == "off":
+    if r == "off" and "отключись" in comand:
         break
     print(r)
-    Programs(r)
+    # Programs(r)
