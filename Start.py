@@ -1,4 +1,4 @@
-from Def import Programs
+from Def import Programs, sustem
 from initialization import initialization, vectors
 from words import data_set
 
@@ -12,5 +12,7 @@ while True:
     r = vectors(text, vectorizer, clf)
     if r == "off" and "отключись" in comand:
         break
+    elif r == "off" and "компютер" in comand:
+        print(r)
     print(r)
-    # Programs(r)
+    Programs(r)
