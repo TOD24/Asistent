@@ -6,8 +6,8 @@ def Programs(file_puth):  # функция запуска программ по 
     try:
         subprocess.Popen(file_puth, shell=True)
         print(f"Программа {file_puth} запущенна")
-    except:
-        print("ошибка при запуске программы")
+    except Exception as e:
+        print(f"ошибка при запуске программы {e}")
 
 
 def sustem(comand):
@@ -18,5 +18,5 @@ def sustem(comand):
             os.system("shutdown /r /t 0")
         elif "h" in comand:
             os.system("shutdown /h /t 0")
-    except Ellipsis as e:
+    except Exception as e:
         print(f"Произошла ошибка: {e}")
