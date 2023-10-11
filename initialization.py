@@ -10,16 +10,15 @@ import queue
 
 q = queue.Queue()
 
-# Глобальные переменные
-#model = None  # Модель Vosk будет инициализирована в функции initialize_recognizer
-#device = sd.default.device
-#samplerate = int(sd.query_devices(device[0], 'input')['default_samplerate'])
+Глобальные переменные
+model = None  # Модель Vosk будет инициализирована в функции initialize_recognizer
+device = sd.default.device
+samplerate = int(sd.query_devices(device[0], 'input')['default_samplerate'])
 
 
 
 
-def initialization(data):
-    # Обучение матрицы на data_set модели
+def initialization(data):  # Обучение матрицы на data_set модели
     vectorizer = CountVectorizer()
     vectors = vectorizer.fit_transform(list(data.keys()))
 
@@ -28,8 +27,7 @@ def initialization(data):
     return vectorizer, clf
 
 
-def vectors(data, vectorizer, clf):
-    # принимает текст и векторы для сравнения
+def vectors(data, vectorizer, clf):  # принимает текст и векторы для сравнения
     # проверяем есть ли имя бота в data, если нет, то return
     trg = TRIGGERS.intersection(data.split())
     if not trg:
@@ -62,9 +60,7 @@ def recognize():
             if rec.AcceptWaveform(data):
                 data = json.loads(rec.Result())['text']
                 print(f"+{data}")
-                # Здесь должна быть функция для обработки распознанного текста из data
                 return data
             else:
-                # print(rec.PartialResult())
                 data2 = json.loads(rec.PartialResult())["partial"]
                 print(f"-{data2}")
